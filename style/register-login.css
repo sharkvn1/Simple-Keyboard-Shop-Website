@@ -1,0 +1,27 @@
+body {
+    font-family: 'Lexend', sans-serif;
+    height: 100vh;
+}
+
+.regForm {
+    width: 500px;
+    height: 620px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    border: solid 1px black;
+    background-color: white;
+}
+
+.loginForm {
+    width: 500px;
+    height: 420px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    border: solid 1px black;
+}

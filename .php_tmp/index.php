@@ -105,9 +105,6 @@
         <?php endwhile; ?>
         </form>
     </div>
-    <div class="main-text">
-        <h1>Sản Phẩm Của Chúng Tôi</h1>
-    </div>
     <div class="main-container">
         <?php
         $data = GetData('product');
@@ -115,7 +112,7 @@
         ?>
             <div class="card" style="width: 18rem;">
                 <div class="product-img">
-                    <img src="./<?= $row['ImagePath'] ?>" class="card-img-top" alt="logo" width="286" height="286">
+                    <img src="./<?= $row['ImagePath'] ?>" class="card-img-top" alt="logo" width="286" height="2">
                 </div>
                 <div class="card-body">
                     <h5 class="card-title"><?= $row['ProductName'] ?></h5>
@@ -125,28 +122,7 @@
             </div>
         <?php endwhile; ?>
     </div>
-    <div class="footer">
-        <div class="footer-container">
-            <hr>
-            <div class="footer-mid">
-                <div>
-                    <img src="./img/logo-removebg.png" alt="">
-                    <div class="dkkd">
-                        <p>Công ty Cổ Phần Xshop ĐKKD: 078342354 do sở KH&ĐT TP.HP cấp ngày: 10/10/2023</p>
-                    </div>
-                </div>
-                <div>
-                    <img src="./img/bct.png" alt="" width="303" height="116">
-                </div>
 
-            </div>
-            <hr>
-            <div class="footer-bottom">
-                <p id="cr">Copyright © 2023-2023 Xshop. All rights reserved.</p>
-                <img id="payment" src="./img/payments.png" alt="">
-            </div>
-        </div>
-    </div>
     <script src="https://kit.fontawesome.com/ec4ae96e25.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
