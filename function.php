@@ -4,6 +4,7 @@ namespace fun; ?>
 <?php
 require("connectDB.php");
 require("data.php");
+
 use function database\GetDataById;
 use function database\GetUserId;
 
@@ -12,17 +13,19 @@ function login_auth($username, $password)
     global $connect;
     $db = "SELECT * FROM `users`";
     $data = mysqli_query($connect, $db);
+    $auth = false;
     if (mysqli_num_rows($data) > 0) {
         while ($row = mysqli_fetch_assoc($data)) {
             if ($username == $row['Username'] && $password == $row['Password'] || $username == $row['Email'] && $password == $row['Password']) {
-                $id = GetUserId($username);
-                $role = GetDataById('users',$id)['Role'];
-                setcookie("is_logged_in", $id, time() + 3600, '/');
-                setcookie("is_admin", $role, time() + 3600, '/');
-                header('Location: ./index.php');
-            } else {
-                return "Wrong username/mail or password";
+                $auth = true;
             }
+        }
+        if ($auth == true) {
+            $id = GetUserId($username);
+            setcookie("is_logged_in", $id, time() + 3600, '/');
+            header('Location: ./index.php');
+        } else {
+            return "Wrong username/mail or password";
         }
     }
 }
@@ -36,16 +39,14 @@ if (isset($_POST['btn_reg'])) {
 
     if ($connect->query($db) === true) {
         $id = GetUserId($username);
-        $role = GetDataById('users',$id)['Role'];
+        $role = GetDataById('users', $id)['Role'];
         setcookie("is_logged_in", $id, time() + 3600, '/');
-        setcookie("is_admin", $role, time() + 3600, '/');
         header('Location: ./index.php');
     }
 }
 
 if (isset($_GET['logout'])) {
     setcookie("is_logged_in", '', time() - 3600, '/');
-    setcookie("is_admin", '', time() - 3600, '/');
     header('Location: ./index.php');
 }
 
@@ -77,7 +78,7 @@ function test_input($data_test)
     return $data_return;
 }
 
-if(isset($_GET['adminPage'])){
+if (isset($_GET['adminPage'])) {
     $page = $_GET['adminPage'];
     header('Location: ./admin.php?page=' . $page);
 }

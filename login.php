@@ -35,8 +35,8 @@ use function fun\test_input;
             <div style="color: re;">
                 <?php
                 if (isset($_POST['btn_login'])) {
-                    $username_mail = test_input($_POST['log_username_mail']);
-                    $password = test_input($_POST['log_password']);
+                    $username_mail = $_POST['log_username_mail'];
+                    $password = $_POST['log_password'];
                     if (empty($username_mail) || empty($password)) {
                         echo "<div style='color:red;'>Please enter username/email vs password</div>";
                     } else {

@@ -1,7 +1,11 @@
 <?php
+require_once "./data.php";
+use function database\GetDataById;
 $role = 0;
-if (isset($_COOKIE['is_admin'])) {
-    $role = $_COOKIE['is_admin'];
+if (isset($_COOKIE['is_logged_in'])) {
+    $is = $_COOKIE['is_logged_in'];
+    $data = GetDataById('users', $is);
+    $role = $data['UserRole'];
 }
 ?>
 <nav class="navbar navbar-expand-lg bg-body-tertiary">

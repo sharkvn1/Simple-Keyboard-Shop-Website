@@ -22,6 +22,7 @@ use function database\GetData;
                         <input type="text" class="form-control" id="ProductPrice" name="ProductPrice">
                     </div>
                     <div class="mb-3">
+                        <label for="ProductManufacturer" class="form-label">Danh Mục Sản Phẩm</label>
                         <select class="form-select" aria-label="Category Select" name="ProductCategory" id="ProductCategory">
                             <option selected>Select Category</option>
                             <?php

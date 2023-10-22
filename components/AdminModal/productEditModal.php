@@ -3,7 +3,7 @@ require_once "./data.php";
 
 use function database\GetData;
 ?>
-<form method="post" action="./Controller/admin/productEdit.php" class="modal fade" id="ProductEditModal<?= $row['Id'] ?>" tabindex="-1" aria-labelledby="EditModal" aria-hidden="true" enctype="multipart/form-data">
+<form method="post" action="./Controller/admin/productEdit.php" class="modal fade" id="ProductEditModal<?= $row['Id'] ?>" tabindex=" -1" aria-labelledby="EditModal" aria-hidden="true" enctype="multipart/form-data">
     <input type="text" name="ProductEditOldImg" hidden value="<?= $row['ImagePath'] ?>">
     <input type="text" name="ProductEditId" hidden value="<?= $row['Id'] ?>">
     <div class=" modal-dialog">
@@ -22,28 +22,6 @@ use function database\GetData;
                     <input type="text" class="form-control" id="ProductEditPrice" name="ProductEditPrice">
                 </div>
                 <label for="ProductEditCategory" class="form-label">Nhà Sản Xuất Sản Phẩm</label>
-                <div class="mb-3">
-                    <select class="form-select" aria-label="Category Select" name="ProductEditCategory" id="ProductEditCategory">
-                        <option selected>Select Category</option>
-                        <?php
-                        $data = GetData('category');
-                        while ($row = $data->fetch_assoc()) :
-                        ?>
-                            <option value="<?php echo $row['Id'] ?>"><?php echo $row['CategoryName'] ?></option>
-                        <?php endwhile; ?>
-                    </select>
-                </div>
-                <div class="mb-3">
-                    <label for="ProductEditManufacturer" class="form-label">Nhà Sản Xuất Sản Phẩm</label>
-                    <select class="form-select" aria-label="Manufacturer Select" name="ProductEditManufacturer" id="ProductEditManufacturer">
-                        <option selected>Select Manufacturer</option>
-                        <?php
-                        $data = GetData('manufacturer');
-                        while ($row = $data->fetch_assoc()) :
-                        ?>
-                            <option value=" <?php echo $row['Id'] ?>"><?php echo $row['ManufacturerName'] ?></option>
-                        <?php endwhile; ?>
-                    </select>
                 </div>
                 <div class="mb-3">
                     <label for="ProductEditDescription" class="form-label">Mô Tả Về Sản Phẩm</label>

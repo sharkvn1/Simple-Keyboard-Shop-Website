@@ -1,4 +1,6 @@
 <?php
+require_once "../../data.php";
+use function database\GetDataById;
 require("../../connectDB.php");
 
 if (isset($_POST['ProductEditSubmit'])) {
@@ -9,6 +11,7 @@ if (isset($_POST['ProductEditSubmit'])) {
     $error = $_FILES['ProductEditImage']['error'];
     $tmp_name = $_FILES['ProductEditImage']['tmp_name'];
 
+    $data = GetDataById('product', $id);
     $ProductEditName = $_POST['ProductEditName'];
     $ProductEditPrice = $_POST['ProductEditPrice'];
     $ProductEditCategory = $_POST['ProductEditCategory'];
@@ -22,11 +25,13 @@ if (isset($_POST['ProductEditSubmit'])) {
     $new_img_name = uniqid("IMG-", true) . '.' . $img_ex_lc;
     $img_path = 'upload/' . $new_img_name;
     $img_upload_path = '../../upload/' . $new_img_name;
-    move_uploaded_file($tmp_name, $img_upload_path);
 
-    $sql = "UPDATE product SET ProductName = '$ProductEditName', ImagePath = '$img_path', Price = '$ProductEditPrice', IdCategory = '$ProductEditCategory', IdManufacturer = '$ProductEditManufacturer',ProductDescriptions = '$ProductEditDescription' ,Quantity = '$ProductEditQuantity', SpecialStatus = '$ProductEditSpecialStatus' WHERE `Id` = 11";
-    mysqli_query($connect, $sql);
-    move_uploaded_file($tmp_name, $img_upload_path);
-    unlink('../../' . $delImg);
-    header("Location: ../../admin.php?page=sanpham");
+    $sql = "UPDATE product SET ProductName = 'Fantasy', ImagePath = '$img_path', Price = '$ProductEditPrice', IdCategory = '$ProductEditCategory', IdManufacturer = '$ProductEditManufacturer',ProductDescriptions = '$ProductEditDescription' ,Quantity = '$ProductEditQuantity', SpecialStatus = '$ProductEditSpecialStatus' WHERE `Id` = $id";
+    if ($connect->query($sql) === true) {
+        if ($tmp_name != '') {
+            move_uploaded_file($tmp_name, $img_upload_path);
+            unlink('../../' . $delImg);
+        }
+        header("Location: ../../admin.php?page=sanpham");
+    }
 }
