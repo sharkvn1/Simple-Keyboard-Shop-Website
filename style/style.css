@@ -1,0 +1,241 @@
+body {
+    font-family: 'Lexend', sans-serif;
+}
+
+.Main-nav {
+    max-width: 1920px;
+}
+
+.navbar {
+    background-color: white;
+}
+
+.banner {
+    max-width: 100%;
+    min-height: 1080px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+}
+
+.slider {
+    max-width: 1920px;
+}
+
+.slider img {
+    width: 1920px;
+    height: 1080px;
+}
+
+.menu-slide {
+    display: flex;
+    max-width: 100%;
+    justify-content: center;
+    margin: 80px 0 0 0;
+    gap: 63px
+}
+
+.menu-slide button {
+    border: 0px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    align-items: center;
+    background-color: white;
+}
+
+.menu-slide img {
+    border-radius: 100px
+}
+
+.card {
+    width: 400px;
+    height: 500px;
+}
+
+.card-top {
+    display: flex;
+    gap: 10px;
+    padding: 5px;
+}
+
+.card-top p {
+    font-size: 20px;
+    font-weight: 600;
+    margin: 0;
+}
+
+.badge {
+    position: absolute;
+    width: 60px;
+    right: -14px;
+    top: -15px
+}
+
+.card-top-text {
+    width: 100%;
+}
+
+.top-text {
+    margin-top: 30px;
+}
+
+#ImgCard {
+    border-radius: 100px;
+    width: 200px;
+    height: 200px;
+}
+
+.cart {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    border-radius: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    bottom: 0;
+    right: 0;
+    margin: 0 10px 10px 0;
+}
+
+.cart-icon {
+    color: white !important;
+}
+
+.footer {
+    margin-top: 50px;
+    width: 100%;
+    background-color: #F3F3F3;
+    height: 330px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-container {
+    padding: 20px;
+    width: 1920px;
+    height: 100%;
+}
+
+.dkkd {
+    width: 290px;
+    margin-top: 20px;
+}
+
+#payment {
+    float: right;
+    width: 330px;
+}
+
+.footer-mid {
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer-bottom {
+    display: flex;
+    width: 1920px;
+    justify-content: space-between;
+}
+
+.main-text {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 40px 0 40px 0;
+}
+
+.main-container {
+    display: grid;
+    grid-template-columns: auto auto auto auto auto;
+    margin: auto;
+    justify-content: center;
+    column-gap: 20px;
+    row-gap: 40px;
+}
+
+.product-img {
+    display: flex;
+    align-items: center;
+}
+
+#log-btn {
+    text-align: center;
+}
+
+#log-btn button {
+    background-color: white;
+    border: 0px;
+}
+
+#log-btn button:hover {
+    background-color: #f8f9fa;
+}
+
+.account-container {
+    width: 100%;
+}
+
+.account-main {
+    background-color: #f3f4f6;
+    max-width: 1000px;
+    margin: auto;
+    height: 1080px;
+    padding: 50px;
+    margin-top: 40px;
+    border-radius: 20px;
+    border: 1px solid black;
+}
+
+.acc-top-text {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    row-gap: 40px;
+    margin-top: 40px;
+}
+
+#info-text {
+    font-weight: 600;
+}
+
+.acc-top-text p {
+    margin-bottom: 4px;
+}
+
+.ava-container {
+    display: flex;
+    align-items: center;
+}
+
+.ava-container img {
+    border-radius: 200px;
+    width: 200px;
+    height: 200px;
+}
+
+.ava-container form {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-left: 30px;
+    gap: 10px;
+}
+
+.vertical-line {
+    width: 2px;
+    background-color: #e9eaeb;
+    height: 200px;
+    margin: 0px 30px 0 30px;
+}
+
+.info-change {
+    display: flex;
+    justify-content: center;
+}
+
+.info-change form {
+    width: 500px;
+}

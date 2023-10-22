@@ -79,7 +79,7 @@ function test_input($data_test)
 
 if(isset($_GET['adminPage'])){
     $page = $_GET['adminPage'];
-    header('Location: ./admin/admin.php?page=' . $page);
+    header('Location: ./admin.php?page=' . $page);
 }
 
 ?>
